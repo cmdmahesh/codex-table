@@ -6,5 +6,5 @@ $vendorDir = dirname(dirname(__FILE__));
 $baseDir = dirname($vendorDir);
 
 return array(
-    'sp\\table\\' => array($baseDir . '/application'),
+    'codex\\table\\' => array($baseDir . '/application'),
 );

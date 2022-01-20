@@ -1,6 +1,6 @@
 <?php
 
-namespace sp\table\controller;
+namespace codex\table\controller;
 /**
  * 	A class to handle the requests
  * 	-- handle all the incoming requests

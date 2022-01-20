@@ -1,7 +1,7 @@
 {
     "autoload": {
         "psr-4": {
-            "sp\\table\\": "application"
+            "codex\\table\\": "application"
         }
     }
 }

@@ -12,10 +12,10 @@
 
 defined( 'ABSPATH' ) || exit;
 
-defined('SP_TABLE_DIR') || define('SP_TABLE_DIR',__DIR__);
-defined('SP_TABLE_URL') || define('SP_TABLE_URL',plugins_url('/',__FILE__));
+defined('CODEX_TABLE_DIR') || define('CODEX_TABLE_DIR',__DIR__);
+defined('CODEX_TABLE_URL') || define('CODEX_TABLE_URL',plugins_url('/',__FILE__));
 
-class SP_Table {
+class CODEX_Table {
 
 	private static $_instance = null;
 
@@ -32,7 +32,7 @@ class SP_Table {
 	}
 
 	public function init() {		
-		\sp\table\controller\Requests::instance()->init();
+		\codex\table\controller\Requests::instance()->init();
 	}
 
 	public static function do_activate( $network_wide ) {
@@ -63,18 +63,18 @@ class SP_Table {
 }
 
 
-function sp_table() {	
-	return SP_Table::instance();
+function codex_table() {	
+	return CODEX_Table::instance();
 }
 
 
 add_action( 'plugins_loaded',function(){
 	if(function_exists('codx')) {
 		require_once __DIR__.'/vendor/autoload.php';
-		sp_table()->init();
+		codex_table()->init();
 	}
 });	
 
-register_activation_hook( __FILE__, 'SP_Table::do_activate' );
-register_deactivation_hook( __FILE__, 'SP_Table::do_deactivate' );
-register_uninstall_hook( __FILE__, 'SP_Table::do_uninstall' );
+register_activation_hook( __FILE__, 'CODEX_Table::do_activate' );
+register_deactivation_hook( __FILE__, 'CODEX_Table::do_deactivate' );
+register_uninstall_hook( __FILE__, 'CODEX_Table::do_uninstall' );

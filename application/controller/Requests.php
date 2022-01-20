@@ -1,6 +1,6 @@
 <?php
 
-namespace sp\table\controller;
+namespace codex\table\controller;
 /**
  * 	A class to handle the requests
  * 	-- handle all the incoming requests
@@ -27,17 +27,17 @@ class Requests {
 
 	public function init() {
 
-		if( defined( 'DOING_AJAX' ) or (function_exists('is_ajax') and is_ajax()) ) {
+		if( defined( 'DOING_AJAX' ) or (function_exists('wp_doing_ajax') and wp_doing_ajax()) ) {
 			// ajax request
-			\sp\table\controller\ajax\Ajax::instance()->init();
+			\codex\table\controller\ajax\Ajax::instance()->init();
 
-		} elseif(is_admin()) {
+		} elseif(\is_admin()) {
 			// admin panel request
-			\sp\table\controller\admin\Admin::instance()->init();
+			\codex\table\controller\admin\Admin::instance()->init();
 
 		} else {
 			// public page request
-			\sp\table\controller\publics\Publics::instance()->init();
+			\codex\table\controller\publics\Publics::instance()->init();
 
 		}
 

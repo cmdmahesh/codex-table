@@ -4,8 +4,20 @@ import 'ag-grid-community/dist/styles/ag-grid.css';
 import 'ag-grid-community/dist/styles/ag-theme-alpine.css';
 
 class PublicProductGrid extends React.Component{
-
+   
 	render() {
+
+        /*
+        *  rows: an object of rows in the table
+        *   [{column_key: value}]
+        */
+        let _rows = this.props.rows;
+
+        /*
+        *  columns: an object of columns in the table
+        *   [{column_key: Column Title}]
+        */
+        let _columns = this.props.columns;
 
         const rowData = [
             {make: "Toyota", model: "Celica", price: 35000},

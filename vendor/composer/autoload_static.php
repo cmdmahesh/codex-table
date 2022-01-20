@@ -4,27 +4,32 @@
 
 namespace Composer\Autoload;
 
-class ComposerStaticInit4ed6c95b820a96391c45991102dfcbfc
+class ComposerStaticInita547cb9020540c1993480152efb9e01e
 {
     public static $prefixLengthsPsr4 = array (
-        's' => 
+        'c' => 
         array (
-            'sp\\table\\' => 9,
+            'codex\\table\\' => 12,
         ),
     );
 
     public static $prefixDirsPsr4 = array (
-        'sp\\table\\' => 
+        'codex\\table\\' => 
         array (
             0 => __DIR__ . '/../..' . '/application',
         ),
     );
 
+    public static $classMap = array (
+        'Composer\\InstalledVersions' => __DIR__ . '/..' . '/composer/InstalledVersions.php',
+    );
+
     public static function getInitializer(ClassLoader $loader)
     {
         return \Closure::bind(function () use ($loader) {
-            $loader->prefixLengthsPsr4 = ComposerStaticInit4ed6c95b820a96391c45991102dfcbfc::$prefixLengthsPsr4;
-            $loader->prefixDirsPsr4 = ComposerStaticInit4ed6c95b820a96391c45991102dfcbfc::$prefixDirsPsr4;
+            $loader->prefixLengthsPsr4 = ComposerStaticInita547cb9020540c1993480152efb9e01e::$prefixLengthsPsr4;
+            $loader->prefixDirsPsr4 = ComposerStaticInita547cb9020540c1993480152efb9e01e::$prefixDirsPsr4;
+            $loader->classMap = ComposerStaticInita547cb9020540c1993480152efb9e01e::$classMap;
 
         }, null, ClassLoader::class);
     }
